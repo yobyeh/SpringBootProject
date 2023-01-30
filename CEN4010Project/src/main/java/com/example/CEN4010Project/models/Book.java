@@ -37,6 +37,7 @@ public class Book {
         this.isbn = isbn;
     }
 
+    /*
     @Column(name="BOOK_NAME")
     private String bookName;
 
@@ -124,4 +125,6 @@ public class Book {
     public void setCopiesSold(Integer copiesSold){
         this.copiesSold = copiesSold;
     }
+
+     */
 }
