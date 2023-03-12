@@ -37,6 +37,7 @@ public class Book {
         this.isbn = isbn;
     }
 
+
     @Column(name="BOOK_NAME")
     private String bookName;
 
@@ -103,7 +104,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    @Column(name="YEAR_PUBLISHED")
+    @Column(name="YEAR")
     private Integer yearPublished;
 
     public Integer getYearPublished() {
@@ -124,5 +125,4 @@ public class Book {
     public void setCopiesSold(Integer copiesSold){
         this.copiesSold = copiesSold;
     }
-
 }
