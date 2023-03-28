@@ -4,14 +4,12 @@ package com.example.CEN4010Project.models;
 //import javax.persistence.Id;
 //import javax.persistence.Column;
 //import javax.persistence.Table;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="BOOKS")
+//@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Book {
 
     @Id
@@ -71,14 +69,15 @@ public class Book {
         this.price = price;
     }
 
-    @Column(name="AUTHOR")
-    private String author;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name= "AUTHORS_ID")
+    private Author author;
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return this.author;
     }
 
-    public void setAuthor(String author){
+    public void setAuthor(Author author){
         this.author = author;
     }
 
@@ -104,7 +103,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    @Column(name="YEAR")
+    @Column(name="YEAR_PUBLISHED")
     private Integer yearPublished;
 
     public Integer getYearPublished() {

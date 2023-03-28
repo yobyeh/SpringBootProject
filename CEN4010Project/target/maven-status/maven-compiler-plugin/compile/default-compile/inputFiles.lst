@@ -2,4 +2,9 @@ C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\J
 C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\Repository\BookRepository.java
 C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\controller\BookController.java
 C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\models\Book.java
+C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\controller\BookNotFoundException.java
+C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\controller\AuthorNotFoundException.java
+C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\models\Author.java
+C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\Repository\AuthorRepository.java
+C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\controller\AuthorController.java
 C:\Users\David\Desktop\CEN4010Project\src\main\java\com\example\CEN4010Project\Cen4010ProjectApplication.java

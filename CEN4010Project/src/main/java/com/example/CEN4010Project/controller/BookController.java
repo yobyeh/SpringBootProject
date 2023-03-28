@@ -1,18 +1,28 @@
 package com.example.CEN4010Project.controller;
 
 import java.lang.Iterable;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.CEN4010Project.Repository.AuthorRepository;
 import com.example.CEN4010Project.Repository.BookRepository;
+import com.example.CEN4010Project.models.Author;
 import com.example.CEN4010Project.models.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BookController {
-    private final BookRepository bookRepository;
+
+    @Autowired
+    private BookRepository bookRepository;
+
+    @Autowired
+    private AuthorRepository authorRepository;
 
     public BookController(final BookRepository bookRepository){
         this.bookRepository = bookRepository;
@@ -29,11 +39,33 @@ public class BookController {
         return this.bookRepository.findById(id);
     }
 
+    @GetMapping("/Authors/{id}/Books")
+    public List<Book> getAuthorBooksById(@PathVariable("id") Integer id) {
+        Author author = authorRepository.findById(id)
+                .orElseThrow(() -> new AuthorNotFoundException("Author not found"));
+        return bookRepository.findByAuthor(author);
+    }
+
     @PostMapping("/Books")
     public Book createNewBook(@RequestBody Book book){
-        Book newBook = this.bookRepository.save(book);
-        return newBook;
+        Author author = authorRepository.findById(book.getAuthor().getId())
+                .orElseThrow(() -> new BookNotFoundException("Author not found"));
+
+        Book newBook = new Book();
+        newBook.setISBN(book.getISBN());
+        newBook.setBookName(book.getBookName());
+        newBook.setBookDescription(book.getBookDescription());
+        newBook.setPrice(book.getPrice());
+        newBook.setAuthor(author);
+        newBook.setGenre(book.getGenre());
+        newBook.setPublisher(book.getPublisher());
+        newBook.setYearPublished(book.getYearPublished());
+        newBook.setCopiesSold(book.getCopiesSold());
+
+        Book savedBook = this.bookRepository.save(newBook);
+        return savedBook;
     }
 
 
 }
+
