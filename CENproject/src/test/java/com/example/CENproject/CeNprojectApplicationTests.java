@@ -1,10 +1,10 @@
-package com.springproject.artifact;
+package com.example.CENproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ArtifactApplicationTests {
+class CeNprojectApplicationTests {
 
 	@Test
 	void contextLoads() {

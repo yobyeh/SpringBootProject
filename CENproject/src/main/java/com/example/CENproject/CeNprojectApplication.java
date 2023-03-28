@@ -1,13 +1,13 @@
-package com.springproject.artifact;
+package com.example.CENproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ArtifactApplication {
+public class CeNprojectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ArtifactApplication.class, args);
+		SpringApplication.run(CeNprojectApplication.class, args);
 	}
 
 }
