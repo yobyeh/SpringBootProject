@@ -12,32 +12,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @Entity
-@Table(name = "Users")
-public class User {
-
+@Table(name = "CreditCards")
+public class CreditCard {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "username", unique = true)
-    private String username;
+    @Column(name = "user_id")
+    private String user_id;
 
-    @Column(name = "email", unique = true)
-    private String email;
+    @Column(name = "cardNumber")
+    private Long cardNumber;
 
-    @Column(name = "password")
-    private String password;
 
-    @Column(name = "firstName")
-    private String firstName;
 
-    @Column(name = "lastname")
-    private String lastname;
-
-    @Column(name = "homeAddress")
-    private String homeAddress;
-    
 }

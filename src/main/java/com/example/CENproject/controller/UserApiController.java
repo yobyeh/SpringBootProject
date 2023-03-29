@@ -1,6 +1,7 @@
 package com.example.CENproject.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,7 +16,7 @@ import com.example.CENproject.entity.User;
 import com.example.CENproject.repository.UserRepo;
 
 @RestController
-public class ApiControllers {
+public class UserApiController {
 
     @Autowired
     private UserRepo userRepo;
@@ -28,6 +29,11 @@ public class ApiControllers {
     @GetMapping(value = "/users")
     public List<User> getUsers() {
         return userRepo.findAll();
+    }
+
+    @GetMapping("/users/{id}")
+    public Optional<User> getBookById(@PathVariable("id") Integer id) {
+        return this.userRepo.findById(id);
     }
 
     @PostMapping(value = "/save")
