@@ -1,6 +1,6 @@
-package com.Book.App.BookApp.Controller;
-import com.Book.App.BookApp.Entity.Book;
-import com.Book.App.BookApp.Service.BookService;
+package com.example.CENproject.controller;
+import com.example.CENproject.entity.Book;
+import com.example.CENproject.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
