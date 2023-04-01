@@ -1,4 +1,4 @@
-package com.Book.App.BookApp.Entity;
+package com.example.CENproject.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
