@@ -1,6 +1,6 @@
-package com.Book.App.BookApp.Repository;
+package com.example.CENproject.repository;
 
-import com.Book.App.BookApp.Entity.Book;
+import com.example.CENproject.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookRepo extends JpaRepository<Book,Integer> {
