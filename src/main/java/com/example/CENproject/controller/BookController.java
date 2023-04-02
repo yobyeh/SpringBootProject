@@ -62,6 +62,7 @@ public class BookController {
         newBook.setPublisher(book.getPublisher());
         newBook.setYearPublished(book.getYearPublished());
         newBook.setCopiesSold(book.getCopiesSold());
+        newBook.setQuantity(book.getQuantity());
 
         Book savedBook = this.bookRepository.save(newBook);
         return savedBook;
