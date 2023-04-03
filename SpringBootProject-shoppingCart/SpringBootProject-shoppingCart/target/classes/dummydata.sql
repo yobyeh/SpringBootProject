@@ -2,66 +2,72 @@ dummydata --@block
 
 
 --@block
-insert into Users (username, password, firstName, lastName)
+insert into Users (username, password, first_Name, lastName)
 values ('dpancost0', 'CqB3An', 'Dyanne', 'Pancost');
-insert into Users (username, password, firstName, lastName)values ('belby1', 'KySDjRodsUt', 'Bartholomeus', 'Elby');
-insert into Users (username, password, firstName, lastName)values ('mcloke2', '2Fnaed', 'Merill', 'Cloke');
-insert into Users (username, password, firstName, lastName)values ('amckinnon3','89ZFr9p9BSjr','Andrei','McKinnon');
-insert into Users (username, password, firstName, lastName)values ('mbrinkworth4','usmLO1vu','Marrilee','Brinkworth');
-insert into Users (username, password, firstName, lastName)values ('gjakolevitch5','3XqzACI8','Gino','Jakolevitch');
-insert into Users (username, password, firstName, lastName)values ('clestrange6','htbt42nctK3','Catrina','Le Strange');
-insert into Users (username, password, firstName, lastName)values ('wriddeough7', 'cdU52O', 'Wait', 'Riddeough');
-insert into Users (username, password, firstName, lastName)values ('dcutbush8', 'kjTvJsVq', 'Dion', 'Cutbush');
-insert into Users (username, password, firstName, lastName)values ('evellden9', 'jMTY3Xm', 'Ephrem', 'Vellden');
-insert into Users (username, password, firstName, lastName)values ('fheeleya', 'YJP1y5Ek', 'Flinn', 'Heeley');
-insert into Users (username, password, firstName, lastName)values ('pbradnumb', 'vP5a5M', 'Port', 'Bradnum');
-insert into Users (username, password, firstName, lastName)values ('cbellchamberc', 'QRg2oY', 'Coop', 'Bellchamber');
-insert into Users (username, password, firstName, lastName)values ('sleveringtond', 'yFhuYC', 'Sena', 'Leverington');
-insert into Users (username, password, firstName, lastName)values ('asessere', 'CgmGbBTvN', 'Aldwin', 'Sesser');
-insert into Users (username, password, firstName, lastName)values ('asammesf', '2w67YAcD', 'Anatollo', 'Sammes');
-insert into Users (username, password, firstName, lastName)values ('mjunking', '381TgHGwJ', 'Miltie', 'Junkin');
-insert into Users (username, password, firstName, lastName)values ('thartyh', 'r2kqYpzd8Hzi', 'Thorsten', 'Harty');
-insert into Users (username, password, firstName, lastName)values ('lgrigsi', '8el0ee7z5H5m', 'Latia', 'Grigs');
-insert into Users (username, password, firstName, lastName)values ('mfirksj', 'zZjlWOP', 'Marv', 'Firks');
+insert into Users (username, password, first_Name, lastName)values ('belby1', 'KySDjRodsUt', 'Bartholomeus', 'Elby');
+insert into Users (username, password, first_Name, lastName)values ('mcloke2', '2Fnaed', 'Merill', 'Cloke');
+insert into Users (username, password, first_Name, lastName)values ('amckinnon3','89ZFr9p9BSjr','Andrei','McKinnon');
+insert into Users (username, password, first_Name, lastName)values ('mbrinkworth4','usmLO1vu','Marrilee','Brinkworth');
+insert into Users (username, password, first_Name, lastName)values ('gjakolevitch5','3XqzACI8','Gino','Jakolevitch');
+insert into Users (username, password, first_Name, lastName)values ('clestrange6','htbt42nctK3','Catrina','Le Strange');
+insert into Users (username, password, first_Name, lastName)values ('wriddeough7', 'cdU52O', 'Wait', 'Riddeough');
+insert into Users (username, password, first_name, lastName)values ('dcutbush8', 'kjTvJsVq', 'Dion', 'Cutbush');
+insert into Users (username, password, first_Name, lastName)values ('evellden9', 'jMTY3Xm', 'Ephrem', 'Vellden');
+insert into Users (username, password, first_Name, lastName)values ('fheeleya', 'YJP1y5Ek', 'Flinn', 'Heeley');
+insert into Users (username, password, first_Name, lastName)values ('pbradnumb', 'vP5a5M', 'Port', 'Bradnum');
+insert into Users (username, password, first_Name, lastName)values ('cbellchamberc', 'QRg2oY', 'Coop', 'Bellchamber');
+insert into Users (username, password, first_Name, lastName)values ('sleveringtond', 'yFhuYC', 'Sena', 'Leverington');
+insert into Users (username, password, first_Name, lastName)values ('asessere', 'CgmGbBTvN', 'Aldwin', 'Sesser');
+insert into Users (username, password, first_Name, lastName)values ('asammesf', '2w67YAcD', 'Anatollo', 'Sammes');
+insert into Users (username, password, first_Name, lastName)values ('mjunking', '381TgHGwJ', 'Miltie', 'Junkin');
+insert into Users (username, password, first_Name, lastName)values ('thartyh', 'r2kqYpzd8Hzi', 'Thorsten', 'Harty');
+insert into Users (username, password, first_Name, lastName)values ('lgrigsi', '8el0ee7z5H5m', 'Latia', 'Grigs');
+insert into Users (username, password, first_Name, lastName)values ('mfirksj', 'zZjlWOP', 'Marv', 'Firks');
 
 --@block
-insert into authors (first_name, last_name, biography, publisher) values ('Heall', 'Glyn', 'Pzuhfvluclirlzhklogiomvpckdd', 'Mrtyfxkviqnhkq');
-insert into authors (first_name, last_name, biography, publisher) values ('Roddie', 'Hovee', 'Bgtdpghsyahmmkpnrfjhnthmzokr', 'Ulmcbgpijlwykt');
-insert into authors (first_name, last_name, biography, publisher) values ('Padraig', 'Bowhay', 'Xybyhvbzdpxqdlgtobjgllybxcyl', 'Qbhedjmqqdddpp');
-insert into authors (first_name, last_name, biography, publisher) values ('Sherm', 'Drennan', 'Pysostedsbudhiokjudxgosdqvou', 'Ilenlmkieygpzc');
-insert into authors (first_name, last_name, biography, publisher) values ('Burg', 'Lumsdall', 'Zhsaduwpgrxcmhluhvzqxitbytnj', 'Aqgqjwkowdqnhd');
-insert into authors (first_name, last_name, biography, publisher) values ('Angeli', 'Gowing', 'Uudbrbswboypqygngciznenxnfei', 'Letbknizczyphn');
-insert into authors (first_name, last_name, biography, publisher) values ('Dolph', 'Barensky', 'Tsftswxzlfvokrwcuunjgstssbxl', 'Kmcvzycyaotwpd');
-insert into authors (first_name, last_name, biography, publisher) values ('Vince', 'Leechman', 'Rdopdshuoikxjqtvqkmbxcyrphue', 'Igufljliijvian');
-insert into authors (first_name, last_name, biography, publisher) values ('Burch', 'Richichi', 'Ohpsptfbzbxjkowqubgiwfoumfon', 'Gilswfhsaxllrq');
-insert into authors (first_name, last_name, biography, publisher) values ('Pembroke', 'Maevela', 'Ywoegminirgjpeerjiveukgmisql', 'Ivoldqroshpoop');
-insert into authors (first_name, last_name, biography, publisher) values ('Lorens', 'Marten', 'Mhqrlwrizrnyiqurqbunbltasjtg', 'Newcipjylbfymt');
-insert into authors (first_name, last_name, biography, publisher) values ('Gerald', 'Hallin', 'Qbtmvzpdpvggqqwkoaveewvkxzsq', 'Ujougmwesgcnau');
-insert into authors (first_name, last_name, biography, publisher) values ('Scotti', 'Maccaig', 'Azxnsmyldransytsjtuzmrvijtfq', 'Ldblshgsqjibsy');
-insert into authors (first_name, last_name, biography, publisher) values ('Yancy', 'Frostick', 'Lqvhknfuccfkrsofzhdspxgfaecg', 'Wjtzbhyckaxemc');
-insert into authors (first_name, last_name, biography, publisher) values ('Mitchel', 'Station', 'Ldbfknvoggjfgyekmrilsrgpvnpk', 'Zxfsalryuqfkto');
+insert into Authors (first, last) values ('Theodor', 'Knappett');
+insert into Authors (first, last) values ('Tracy', 'Moreno');
+insert into Authors (first, last) values ('Vasily', 'Strafen');
+insert into Authors (first, last) values ('Tine', 'Poston');
+insert into Authors (first, last) values ('Bette', 'Whissell');
+insert into Authors (first, last) values ('Clarice', 'Parades');
+insert into Authors (first, last) values ('Ulrika', 'Barrott');
+insert into Authors (first, last) values ('Base', 'Baldock');
+insert into Authors (first, last) values ('Alyce', 'Dredge');
+insert into Authors (first, last) values ('Lorin', 'Androli');
+insert into Authors (first, last) values ('Virgie', 'Heenan');
+insert into Authors (first, last) values ('Cecilia', 'Baus');
+insert into Authors (first, last) values ('Antonetta', 'Brawson');
+insert into Authors (first, last) values ('Emmerich', 'Bosma');
+insert into Authors (first, last) values ('Eberto', 'Branscomb');
+insert into Authors (first, last) values ('Ham', 'Brasher');
+insert into Authors (first, last) values ('Kaylyn', 'Besnard');
+insert into Authors (first, last) values ('Gilberto', 'Creaser');
+insert into Authors (first, last) values ('Newton', 'Botright');
+insert into Authors (first, last) values ('Bartholomeus', 'Klimek');
 
 --@block
-insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('546207305-4', 'Scenic Route', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 226.24, 11, 'Drama|Thriller', 'Koss and Sons', 2004, 60);
+insert into Book_db (id, isbn, book_title, Description, price, author, genre, publisher, year_Published, copies_Sold, amount)
+values (2, '546207305-4', 'Scenic Route', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 226.24, 'test', 'Drama|Thriller', 'Koss and Sons', 2004, 60, 33234);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('630173645-1', 'Patriot Games', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 264.5, 10, 'Action|Thriller', 'Kreiger-Powlowski', 2012, 67);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('820921486-1', 'Lilies of the Field', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 72.48, 4, 'Drama', 'Lynch-Shanahan', 2006, 94);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('709130727-5', 'L.A. Story', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 265.44, 15, 'Comedy|Romance', 'Feest and Sons', 2009, 114);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('201671121-3', 'Suicide Killers', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 125.3, 6, 'Documentary', 'Murazik Group', 2012, 97);
-insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('215720005-3', 'Rocket, The', 'Fusce consequat. Nulla nisl. Nunc nisl.', 189.83, 11, 'Drama', 'Reichel, Jakubowski and Blanda', 2011, 32);
-insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('738327328-1', 'Gigi', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 131.89, 14, 'Musical', 'Gutmann, Bode and Little', 1999, 146);
+insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('215720005-3', 'Rocket, The', 'Fusce consequat. Nulla nisl. Nunc nisl.', 189.83, 15, 'Drama', 'Reichel, Jakubowski and Blanda', 2011, 32);
+insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('738327328-1', 'Gigi', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 131.89, 17, 'Musical', 'Gutmann, Bode and Little', 1999, 146);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('059769317-X', 'War of the Shaolin Temple (Shao Lin shi san gun seng)', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 270.05, 6, 'Action|Adventure|War', 'Kling Group', 1993, 154);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('400395141-7', 'Whiteboyz', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.', 191.9, 13, 'Comedy|Drama', 'Mann LLC', 2005, 169);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('683520222-X', 'Sweet Karma', 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 242.92, 10, 'Crime|Drama|Thriller', 'Wolf, McLaughlin and Deckow', 1993, 111);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('336803992-X', 'Late Autumn (Man-choo)', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 201.9, 4, 'Drama|Romance', 'Steuber-Murphy', 2002, 103);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('376380498-6', 'Bloody Murder 2: Closing Camp', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 220.88, 10, 'Drama|Horror|Mystery|Thriller', 'Schinner, Goldner and Mante', 1989, 8);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('626150383-4', 'We Were Here', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', 265.9, 4, 'Documentary', 'Okuneva, Yost and Parker', 2011, 51);
-insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('135301564-5', 'Populaire', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 192.1, 11, 'Comedy', 'Grady, Marquardt and Erdman', 2000, 12);
+insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('135301564-5', 'Populaire', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 192.1, 11, 'Comedy', 'Grady, Marquar dt and Erdman', 2000, 12);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('337484091-4', 'Deathmaker, The (Totmacher, Der)', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 63.43, 3, 'Crime|Drama', 'Willms-Buckridge', 2001, 55);
-insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('245742102-0', 'Dirty Bomb', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 52.21, 2, 'Comedy', 'Koelpin, Labadie and Rippin', 1992, 23);
+insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('245742102-0', 'Dirty Bomb', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 52.21, 20, 'Comedy', 'Koelpin, Labadie and Rippin', 1992, 23);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('389604277-7', 'Parking Lot Movie, The', 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', 254.82, 15, 'Documentary', 'O''Connell, Koss and Howe', 1995, 26);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('337932956-8', 'Bloody Mama', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.', 187.99, 13, 'Crime|Drama', 'Schuster Group', 1995, 93);
 insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('331497827-8', 'Black Sunday (La maschera del demonio)', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 264.91, 15, 'Horror', 'Leuschke LLC', 2011, 193);
-insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('107630543-1', 'Snake Woman''s Curse', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 289.25, 12, 'Horror', 'Trantow LLC', 2000, 90);
+insert into Books (isbn, bookName, bookDescription, price, author, genre, publisher, yearPublished, copiesSold, qty) values ('107630543-1', 'Snake Woman''s Curse', 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 289.25, 17, 'Horror', 'Trantow LLC', 2000, 90);
 
 --@block
 insert into Comments (user_id, book_id, comment, rating, dateStamp) values (19, 1, 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', 2, '2021-04-08');
