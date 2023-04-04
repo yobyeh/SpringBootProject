@@ -1,5 +1,6 @@
 package com.example.CENproject.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,8 +28,10 @@ public class Book {
     @Column(name="AUTHOR")
     private String author;
 
+
     @Column(name="GENRE")
     private String genre;
+
 
     @Column(name="PUBLISHER")
     private String publisher;
