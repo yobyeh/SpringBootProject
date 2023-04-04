@@ -20,14 +20,15 @@ CREATE TABLE Authors(
 CREATE TABLE Books(
     id INT PRIMARY KEY AUTO_INCREMENT UNIQUE,
     isbn VARCHAR(255) NOT NULL UNIQUE,
-    title VARCHAR(255) NOT NULL,
-    description TEXT,
+    bookName VARCHAR(255) NOT NULL,
+    bookDescription TEXT,
     price DECIMAL(10,2),
     author_id INT,
     genre VARCHAR(255),
     publisher VARCHAR(255),
-    year YEAR,
+    yearPublished YEAR,
     sold INT,
+    qty INT,
     FOREIGN KEY (author_id) REFERENCES authors(id)
 );
 
