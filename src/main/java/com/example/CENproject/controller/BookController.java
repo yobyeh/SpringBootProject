@@ -22,6 +22,13 @@ public class BookController {
     public Book fetchDetailById(@PathVariable int id){
         return bookService.getBookDetailById(id);
     }
+    
+    @GetMapping("/Authors/{id}/Books")
+    public List<Book> getAuthorBooksById(@PathVariable("id") Integer id) {
+        Author author = authorRepository.findById(id)
+                .orElseThrow(() -> new AuthorNotFoundException("Author not found"));
+        return bookRepository.findByAuthor(author);
+    }
 
     @GetMapping("/Books")
     public List<Book> getAllBooks() {
