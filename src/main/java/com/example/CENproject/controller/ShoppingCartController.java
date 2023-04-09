@@ -18,169 +18,160 @@ import java.util.Map;
 
 @RestController
 public class ShoppingCartController {
+ 
+     @Autowired
+    private ShoppingCartRepo shoppingCartRepo;
+    @Autowired
+    private UserRepo userRepo;
+    @Autowired
+    private BookRepo bookRepo;
+    @Autowired
+    private ShoppingKartService shoppingKartService;
     @Autowired
     private BookService bookService;
 
-    @PostMapping("/addToCart/{bookId}")
-    public ResponseEntity<String> addToCart(@PathVariable int bookId, HttpSession session) {
-        Map<Integer, Integer> cart = getCartFromSession(session);
-        Book book = bookService.getBookDetailById(bookId);
+    @Autowired
+    public ShoppingCartController(final ShoppingCartRepo shoppingCartRepo){
+        this.shoppingCartRepo = shoppingCartRepo;
+    };
+    //adding to userid cart
+    @PostMapping("cart/add/{userId}/{bookId}")
+    public ResponseEntity<Map<String, Object>> addItemToCart(@PathVariable long userId, @PathVariable int bookId) {
 
-        if (book != null) {
-            // Check if there are any copies of the book left
-            if (book.getQty() > 0) {
-                // Add the book to the cart
-                cart.put(bookId, cart.getOrDefault(bookId, 0) + 1);
-
-                // Update the session with the new cart
-                session.setAttribute("cart", cart);
-
-                // Update the book quantity in the server
-                book.setQty(book.getQty() - 1);
-                bookService.saveDetails(book);
-
-                return ResponseEntity.ok("Book with ID:" + bookId + " has been added to cart");
-            } else {
-                return ResponseEntity.badRequest().body("Book with ID:" + bookId + " is out of stock");
-            }
-        } else {
-            return ResponseEntity.notFound().build();
+        // Find the user by their id
+        Optional<User> user = userRepo.findById(userId);
+        if (!user.isPresent()) {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("message", "User not found"));
         }
-    }
-    @PostMapping("/deleteFromCart/{bookId}")
-    public ResponseEntity<String> removeFromCart(@PathVariable int bookId, HttpSession session) {
-        Map<Integer, Integer> cart = getCartFromSession(session);
-        Book book = bookService.getBookDetailById(bookId);
 
-        if (book != null) {
-            // Check if the book is already in the cart
-            if (cart.containsKey(bookId)) {
-                // Increment the book quantity in the server
-                book.setQty(book.getQty() + 1);
-                bookService.saveDetails(book);
-
-                // Remove the book from the cart
-                int quantity = cart.get(bookId) - 1;
-                if (quantity > 0) {
-                    cart.put(bookId, quantity);
-                } else {
-                    cart.remove(bookId);
-                }
-
-                // Update the session with the new cart
-                session.setAttribute("cart", cart);
-
-                return ResponseEntity.ok("Book with ID:" + bookId + " has been removed from cart");
-            } else {
-                return ResponseEntity.badRequest().body("Book with ID:" + bookId + " is not in cart");
-            }
-        } else {
-            return ResponseEntity.notFound().build();
+        // Find the book by its id
+        Optional<Book> book = bookRepo.findById(bookId);
+        if (!book.isPresent()) {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("message", "Book not found"));
         }
+
+        // Check if the item is already in the cart
+        Optional<ShoppingCart> cartItem = shoppingCartRepo.findByUserIdAndBookId(userId, bookId);
+        if (cartItem.isPresent()) {
+            // Item already exists, update the number of books
+            ShoppingCart existingItem = cartItem.get();
+            shoppingCartRepo.save(existingItem);
+        } else {
+            // Item not in cart, create a new item
+            ShoppingCart newItem = new ShoppingCart();
+            Optional<Book> tempbook;
+            tempbook = bookRepo.findById(bookId);
+            newItem.setUserId(userId);
+            newItem.setBookId(tempbook.get().getId());
+            newItem.setPrice(tempbook.get().getPrice());
+            newItem.setUserName(user.get().getUsername());
+            shoppingCartRepo.save(newItem);
+        }
+
+        return ResponseEntity.ok(Collections.singletonMap("message", "Item added to cart"));
     }
 
-    @GetMapping("/cart")
-    public ResponseEntity<Map<String, Object>> getCart(HttpSession session) {
-        Map<Integer, Integer> cart = getCartFromSession(session);
+    @GetMapping("/cart/{userId}")
+    public ResponseEntity<Map<String, Object>> getCart(@PathVariable("userId") long userId) {
+        Optional<User> user = userRepo.findById(userId);
+        if (!user.isPresent()) {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("message", "User not found"));
+        }
+
         List<Map<String, Object>> items = new ArrayList<>();
-        int numBooks = 0;
 
-        // Retrieve the books from the cart
-        for (Integer bookId : cart.keySet()) {
-            Book book = bookService.getBookDetailById(bookId);
+
+
+        List<ShoppingCart> cartItems = shoppingCartRepo.findByUserId(userId);
+        for (ShoppingCart cartItem : cartItems) {
+            Book book = bookRepo.findById(cartItem.getBookId()).orElse(null);
             if (book != null) {
                 Map<String, Object> item = new HashMap<>();
                 item.put("book", book);
-                item.put("quantity", cart.get(bookId));
                 items.add(item);
-                numBooks += cart.get(bookId);
+
             }
         }
 
-        // Create a map with the JSON response body
         Map<String, Object> responseBody = new HashMap<>();
 
         if (items.isEmpty()) {
             responseBody.put("message", "No books in cart");
         } else {
+
             responseBody.put("items", items);
-            responseBody.put("message", "You have " + numBooks + " books in cart");
+            responseBody.put("Hello", user.get().getUsername());
         }
+
         return ResponseEntity.ok(responseBody);
     }
-    private Map<Integer, Integer> getCartFromSession(HttpSession session) {
-        Map<Integer, Integer> cart = (Map<Integer, Integer>) session.getAttribute("cart");
-        if (cart == null) {
-            cart = new HashMap<>();
-            session.setAttribute("cart", cart);
-        }
-        return cart;
-    }
-    @PostMapping("/cancel")
-    public ResponseEntity<String> clearCart(HttpSession session) {
-        Map<Integer, Integer> cart = getCartFromSession(session);
 
-        // Restore the quantity of each book in the cart
-        for (Integer bookId : cart.keySet()) {
-            Book book = bookService.getBookDetailById(bookId);
-            if (book != null) {
-                book.setQty(book.getQty() + cart.get(bookId));
-                bookService.saveDetails(book);
-            }
+    //showing cart by ID
+    @GetMapping("/cart/total/{userId}")
+    public ResponseEntity<Map<String, Object>> getCartTotal(@PathVariable("userId") long userId) {
+        Optional<User> user = userRepo.findById(userId);
+        if (!user.isPresent()) {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("message", "User not found"));
         }
 
-        // Clear the shopping cart and update the session
-        cart.clear();
-        session.setAttribute("cart", cart);
-
-        return ResponseEntity.ok("Shopping cart has been cleared");
-    }
-    @PostMapping("/confirm")
-    public ResponseEntity<String> confirm(HttpSession session) {
-        Map<Integer, Integer> cart = getCartFromSession(session);
-
-        // Clear the shopping cart and update the session
-        cart.clear();
-        session.setAttribute("cart", cart);
-
-        return ResponseEntity.ok("Order confirmed. Shopping cart has been cleared");
-    }
-    @GetMapping("/checkout")
-    public ResponseEntity<Map<String, Object>> checkout(HttpSession session) {
-        Map<Integer, Integer> cart = getCartFromSession(session);
         List<Map<String, Object>> items = new ArrayList<>();
-        double total = 0;
-        int numBooks=0;
+        double totalPrice = 0.0;
 
-        // Retrieve the books from the cart and calculate the total amount to pay
-        for (Integer bookId : cart.keySet()) {
-            Book book = bookService.getBookDetailById(bookId);
+
+        List<ShoppingCart> cartItems = shoppingCartRepo.findByUserId(userId);
+        for (ShoppingCart cartItem : cartItems) {
+            Book book = bookRepo.findById(cartItem.getBookId()).orElse(null);
             if (book != null) {
                 Map<String, Object> item = new HashMap<>();
                 item.put("book", book);
-                item.put("quantity", cart.get(bookId));
+                item.put("price", book.getPrice() );
+                //item.put("amount",cartItem.getAmount());
                 items.add(item);
-                total += book.getPrice() * cart.get(bookId);
-                numBooks += cart.get(bookId);
+
+                totalPrice += book.getPrice() ;
             }
         }
 
-
-        // Create a map with the JSON response body
         Map<String, Object> responseBody = new HashMap<>();
 
         if (items.isEmpty()) {
             responseBody.put("message", "No books in cart");
         } else {
+
             responseBody.put("items", items);
-            responseBody.put("numBooks", numBooks);
-            responseBody.put("totalAmount", total);
-            responseBody.put("message", "You have " + numBooks + " books in cart, the total amount to pay is $" + total);
+            responseBody.put("Hello", user.get().getUsername());
+            responseBody.put("totalPrice", totalPrice);
         }
 
-        // Create a JSON response entity with the response body and HTTP status code
         return ResponseEntity.ok(responseBody);
     }
+
+
+    @PostMapping("cart/del/{userId}/{bookId}")
+    public ResponseEntity<Map<String, Object>> delItemToCart(@PathVariable long userId, @PathVariable int bookId) {
+        Optional<User> user = userRepo.findById(userId);
+        if (!user.isPresent()) {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("message", "User not found"));
+        }
+        Optional<ShoppingCart> bookcheck = shoppingCartRepo.findByBookId(bookId);
+        if (!bookcheck.isPresent()) {
+            return ResponseEntity.badRequest().body(Collections.singletonMap("message", "Book not found in Cart"));
+        }
+        List<Map<String, Object>> items = new ArrayList<>();
+        List<ShoppingCart> cartItems = shoppingCartRepo.findByUserId(userId);
+        for (ShoppingCart cartItem : cartItems) {
+
+            if (cartItem.getBookId() == bookId) {
+                shoppingCartRepo.delete(cartItem);
+            }
+        }
+
+        return ResponseEntity.ok(Collections.singletonMap("message", "Item deleted cart"));
+    }
+
+
+
+
 
 
 }
