@@ -7,12 +7,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.CENproject.entity.Author;
+import com.example.CENproject.repository.BookRepository;
+import com.example.CENproject.repository.AuthorRepository;
+
 import java.util.List;
 
 @RestController
 public class BookController {
     @Autowired
     private BookService bookService;
+
+    //added by JT
+    //I think this was the fix 
+    @Autowired
+    private AuthorRepository authorRepository;
+    @Autowired
+    private BookRepository bookRepository;
+    //----------------------------------------
 
     @PostMapping("/addBook")
     public Book postDetail(@RequestBody Book book){
