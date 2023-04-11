@@ -95,3 +95,8 @@ DROP TABLE users;
 DROP TABLE wishlist;
 SET foreign_key_checks = 1;
 
+--@block
+DROP TABLE users;
+
+--@block
+DROP TABLE credit_cards;
