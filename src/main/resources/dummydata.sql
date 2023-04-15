@@ -2,27 +2,27 @@ dummydata --@block
 
 
 --@block
-insert into Users (username, password, firstName, lastName)
+insert into users (username, password, first_Name, lastName)
 values ('dpancost0', 'CqB3An', 'Dyanne', 'Pancost');
-insert into Users (username, password, firstName, lastName)values ('belby1', 'KySDjRodsUt', 'Bartholomeus', 'Elby');
-insert into Users (username, password, firstName, lastName)values ('mcloke2', '2Fnaed', 'Merill', 'Cloke');
-insert into Users (username, password, firstName, lastName)values ('amckinnon3','89ZFr9p9BSjr','Andrei','McKinnon');
-insert into Users (username, password, firstName, lastName)values ('mbrinkworth4','usmLO1vu','Marrilee','Brinkworth');
-insert into Users (username, password, firstName, lastName)values ('gjakolevitch5','3XqzACI8','Gino','Jakolevitch');
-insert into Users (username, password, firstName, lastName)values ('clestrange6','htbt42nctK3','Catrina','Le Strange');
-insert into Users (username, password, firstName, lastName)values ('wriddeough7', 'cdU52O', 'Wait', 'Riddeough');
-insert into Users (username, password, firstName, lastName)values ('dcutbush8', 'kjTvJsVq', 'Dion', 'Cutbush');
-insert into Users (username, password, firstName, lastName)values ('evellden9', 'jMTY3Xm', 'Ephrem', 'Vellden');
-insert into Users (username, password, firstName, lastName)values ('fheeleya', 'YJP1y5Ek', 'Flinn', 'Heeley');
-insert into Users (username, password, firstName, lastName)values ('pbradnumb', 'vP5a5M', 'Port', 'Bradnum');
-insert into Users (username, password, firstName, lastName)values ('cbellchamberc', 'QRg2oY', 'Coop', 'Bellchamber');
-insert into Users (username, password, firstName, lastName)values ('sleveringtond', 'yFhuYC', 'Sena', 'Leverington');
-insert into Users (username, password, firstName, lastName)values ('asessere', 'CgmGbBTvN', 'Aldwin', 'Sesser');
-insert into Users (username, password, firstName, lastName)values ('asammesf', '2w67YAcD', 'Anatollo', 'Sammes');
-insert into Users (username, password, firstName, lastName)values ('mjunking', '381TgHGwJ', 'Miltie', 'Junkin');
-insert into Users (username, password, firstName, lastName)values ('thartyh', 'r2kqYpzd8Hzi', 'Thorsten', 'Harty');
-insert into Users (username, password, firstName, lastName)values ('lgrigsi', '8el0ee7z5H5m', 'Latia', 'Grigs');
-insert into Users (username, password, firstName, lastName)values ('mfirksj', 'zZjlWOP', 'Marv', 'Firks');
+insert into users (username, password, first_Name, lastName)values ('belby1', 'KySDjRodsUt', 'Bartholomeus', 'Elby');
+insert into users (username, password, first_Name, lastName)values ('mcloke2', '2Fnaed', 'Merill', 'Cloke');
+insert into users (username, password, first_Name, lastName)values ('amckinnon3','89ZFr9p9BSjr','Andrei','McKinnon');
+insert into users (username, password, first_Name, lastName)values ('mbrinkworth4','usmLO1vu','Marrilee','Brinkworth');
+insert into users (username, password, first_Name, lastName)values ('gjakolevitch5','3XqzACI8','Gino','Jakolevitch');
+insert into users (username, password, first_Name, lastName)values ('clestrange6','htbt42nctK3','Catrina','Le Strange');
+insert into users (username, password, first_Name, lastName)values ('wriddeough7', 'cdU52O', 'Wait', 'Riddeough');
+insert into users (username, password, first_Name, lastName)values ('dcutbush8', 'kjTvJsVq', 'Dion', 'Cutbush');
+insert into users (username, password, first_Name, lastName)values ('evellden9', 'jMTY3Xm', 'Ephrem', 'Vellden');
+insert into users (username, password, first_Name, lastName)values ('fheeleya', 'YJP1y5Ek', 'Flinn', 'Heeley');
+insert into users (username, password, first_Name, lastName)values ('pbradnumb', 'vP5a5M', 'Port', 'Bradnum');
+insert into users (username, password, first_Name, lastName)values ('cbellchamberc', 'QRg2oY', 'Coop', 'Bellchamber');
+insert into users (username, password, first_Name, lastName)values ('sleveringtond', 'yFhuYC', 'Sena', 'Leverington');
+insert into users (username, password, first_Name, lastName)values ('asessere', 'CgmGbBTvN', 'Aldwin', 'Sesser');
+insert into users (username, password, first_Name, lastName)values ('asammesf', '2w67YAcD', 'Anatollo', 'Sammes');
+insert into users (username, password, first_Name, lastName)values ('mjunking', '381TgHGwJ', 'Miltie', 'Junkin');
+insert into users (username, password, first_Name, lastName)values ('thartyh', 'r2kqYpzd8Hzi', 'Thorsten', 'Harty');
+insert into users (username, password, first_Name, lastName)values ('lgrigsi', '8el0ee7z5H5m', 'Latia', 'Grigs');
+insert into users (username, password, first_Name, lastName)values ('mfirksj', 'zZjlWOP', 'Marv', 'Firks');
 
 --@block
 insert into authors (first_name, last_name, biography, publisher) values ('Heall', 'Glyn', 'Pzuhfvluclirlzhklogiomvpckdd', 'Mrtyfxkviqnhkq');

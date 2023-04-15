@@ -36,7 +36,12 @@ public class UserApiController {
         return this.userRepo.findById(id);
     }
 
-    @PostMapping(value = "/save")
+    @GetMapping("/GetUser/{username}")
+    public Optional<User> getUserById(@PathVariable("username") String username) {
+        return this.userRepo.findByUsername(username);
+    }
+
+    @PostMapping(value = "/CreateUser")
     public String saveUser (@RequestBody User user) {
         userRepo.save(user);
         return "saved";
