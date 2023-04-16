@@ -30,6 +30,13 @@ public class BookController {
     public Book postDetail(@RequestBody Book book){
         return bookService.saveDetails(book);
     }
+    
+    @GetMapping("/Books/isbn/{isbn}")
+    public Optional<Book> getBookByIsbn(@PathVariable("isbn") String isbn) {
+
+        return this.bookRepository.findByIsbn(isbn);
+    }
+    
     @GetMapping("/getBookById/{id}")
     public Book fetchDetailById(@PathVariable int id){
         return bookService.getBookDetailById(id);
