@@ -34,6 +34,12 @@ public class BookController {
     public Iterable<Book> getBook() {
         return this.bookRepository.findAll();
     }
+    
+    @GetMapping("/Books/isbn/{isbn}")
+    public Optional<Book> getBookByIsbn(@PathVariable("isbn") String isbn) {
+
+        return this.bookRepository.findByIsbn(isbn);
+    }
 
     @GetMapping("/Books/{id}")
     public Optional<Book> getBookById(@PathVariable("id") Integer id) {
