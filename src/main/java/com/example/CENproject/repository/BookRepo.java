@@ -8,4 +8,6 @@ import java.util.List;
 public interface BookRepo extends JpaRepository<Book,Integer> {
   
   List<Book> findByAuthor(Author author);
+  
+  Optional<Book> findByIsbn(String isbn);
 }
