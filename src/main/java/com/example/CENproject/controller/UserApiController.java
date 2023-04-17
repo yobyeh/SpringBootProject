@@ -32,17 +32,22 @@ public class UserApiController {
     }
 
     @GetMapping("/users/{id}")
-    public Optional<User> getBookById(@PathVariable("id") Integer id) {
+    public Optional<User> getUserById(@PathVariable("id") Integer id) {
         return this.userRepo.findById(id);
     }
 
-    @PostMapping(value = "/save")
+    @GetMapping("/getuser/{username}")
+    public Optional<User> getUserById(@PathVariable("username") String username) {
+        return this.userRepo.findByUsername(username);
+    }
+
+    @PostMapping(value = "/createUser")
     public String saveUser (@RequestBody User user) {
         userRepo.save(user);
         return "saved";
     }
 
-    @PutMapping(value = "/update/{id}")
+    @PutMapping(value = "/updateUser/{id}")
     public String updateUser(@PathVariable long id, @RequestBody User user) {
         User updatUser = userRepo.findById(id).get();
         updatUser.setPassword(user.getPassword());
@@ -53,7 +58,7 @@ public class UserApiController {
         return "Updated";
     }
 
-    @DeleteMapping(value = "/delete/{id}")
+    @DeleteMapping(value = "/deleteUser/{id}")
     public String deleteUser(@PathVariable long id){
         User deleteUser = userRepo.findById(id).get();
         userRepo.delete(deleteUser);
